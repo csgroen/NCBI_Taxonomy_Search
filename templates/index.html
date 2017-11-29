@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<title>NCBI Taxonomy Search</title>
+<link rel="stylesheet" type="text/css" href="/static/style_def2.css">
+<h1>NCBI Taxonomy Search</h1>
+</head>
+
+<body>
+  <p>  <form action="/search" method = "post">
+      Organism name: <input type="text" name="name" value=""><br>
+      Tax ID: <input type="text" name="tax" value=""><br>
+
+
+      <input type="checkbox" name="columns" value="tax_id" checked="checked"> Tax ID<br>
+      <input type="checkbox" name="columns" value="parent_tax_id" checked="checked"> Parent Tax ID<br>
+      <input type="checkbox" name="columns" value="rank" checked="checked">Taxonomic classification<br>
+      <input type="checkbox" name="columns" value="embl_code">EMBL Code<br>
+      <input type="checkbox" name="columns" value="division_id">Division ID<br>
+      <input type="checkbox" name="columns" value="inherited_div_flag">Inherited Division ID?<br>
+      <input type="checkbox" name="columns" value="genetic_code_id">Genetic Code ID<br>
+      <input type="checkbox" name="columns" value="inherited_GC_flag">Genetic Code ID Inherited?<br>
+      <input type="checkbox" name="columns" value="mitochondrial_genetic_code_id">Mitochondrial Genetic Code ID<br>
+      <input type="checkbox" name="columns" value="inherited_MGC_flag">Mitochondrial Genetic Code ID Inherited?<br>
+      <input type="checkbox" name="columns" value="GenBank_hidden_flag">GenBank entry lineage suppressed?<br>
+      <input type="checkbox" name="columns" value="hidden_subtree_root_flag">Subtree hidden?<br>
+      <input type="checkbox" name="columns" value="comments" checked = "checked">Comments<br>
+
+      <input type="submit" value="Send">
+    </form>
+  </p>
+</body>
