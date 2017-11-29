@@ -15,6 +15,7 @@ def search():
 		name = request.form['name']
 		tax = request.form['tax']
 		# name = 'Vibrio'
+		# tax = 2056187
 
 		if name == "" and tax == "":
 			return render_template('index.html')
@@ -26,7 +27,7 @@ def search():
 		cols = request.form.getlist("columns")
 		# cols = ['tax_id', 'parent_tax_id', 'rank', 'comments']
 
-		cnx = mysql.connector.connect(user='user', password='password', host='localhost', database='NCBI_Taxonomy')
+		cnx = mysql.connector.connect(user='user', password='senha', host='localhost', database='NCBI_Taxonomy')
 		cursor = cnx.cursor()
 
 		if id_type == 'name':
@@ -38,6 +39,13 @@ def search():
 			for tax_id in cursor:
 				tax.append("'" + str(tax_id[0]) + "'")
 				names.append("'" + str(tax_id[1]) + "'")
+		else:
+			tax_str = "'" + str(tax) + "'"
+			tax = [tax]
+			query = "SELECT name_txt FROM ncbi_names WHERE tax_id =" + tax_str + ";"
+			cursor.execute(query)
+			names = list(cursor)
+			names = [names[0][0]]
 
 		columns = ", ".join(cols)
 
@@ -46,9 +54,9 @@ def search():
 			tax_str = "(" + tax_str + ")"
 			query = "SELECT " + columns + " FROM ncbi_nodes WHERE tax_id IN " + tax_str + ";"
 		else:
-			tax_str = str(tax[0])
 			query = "SELECT " + columns + " FROM ncbi_nodes WHERE tax_id = " + tax_str + ";"
 
+		print(query)
 		cursor.execute(query)
 		f_table = []
 
@@ -61,13 +69,17 @@ def search():
 				f_table[i].append(col)
 			i += 1
 
-		i = 0
-		for hit in f_table:
-			hit.append(names[i])
-			i += 1
+		if id_type == "name":
+			i = 0
+			for hit in f_table:
+				hit.append(names[i])
+				i += 1
+		else:
+			f_table = [f_table[len(f_table) - 1]]
+			f_table[0].append(names[0])
 
+		print(f_table)
 		cols.append('names')
-
 		return(render_template("results.html", f_table = f_table, colnames = cols))
 
 	else:
