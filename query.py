@@ -26,7 +26,7 @@ def search():
 		cols = request.form.getlist("columns")
 		# cols = ['tax_id', 'parent_tax_id', 'rank', 'comments']
 
-		cnx = mysql.connector.connect(user='user', password='senha', host='localhost', database='NCBI_Taxonomy')
+		cnx = mysql.connector.connect(user='user', password='password', host='localhost', database='NCBI_Taxonomy')
 		cursor = cnx.cursor()
 
 		if id_type == 'name':
