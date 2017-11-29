@@ -14,4 +14,4 @@ pip install Flask
 ```
 FLASK_APP=query.py flask run
 ```
-5. NCBI Taxonomy Search is available at localhost:5000
+5. NCBI Taxonomy Search is available at `http://localhost:5000`
