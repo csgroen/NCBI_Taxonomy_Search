@@ -11,7 +11,7 @@ pip install Flask
 ```
 
 3. Download this Python module:
-https://pypi.python.org/pypi/mysql-connector-python/2.0.4
+https://pypi.python.org/pypi/mysql-connector-python/2.0.4  
 Enter the directory in Terminal, then run:
 ```
 python setup.py install
