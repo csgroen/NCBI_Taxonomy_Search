@@ -9,6 +9,10 @@ https://github.com/giffordlabcvr/DIGS-for-EVEs/wiki/NCBI-taxonomy-database
 ```
 pip install Flask
 ```
+
+3. Download and install this Python module:
+https://pypi.python.org/pypi/mysql-connector-python/2.0.4
+
 3. Download this directory
 
 4. Edit the MySQL database configuration in the `query.py`
