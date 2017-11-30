@@ -21,7 +21,7 @@ python setup.py install
 
 5. Edit the MySQL database configuration in the `query.py`
 
-6. Enter the root of this directory using Terminal
+6. Enter the root of **NCBI_Taxonomy** directory using Terminal
 
 7. Run the app using:
 ```
