@@ -17,7 +17,7 @@ Extract, then enter the downloaded directory in Terminal, then run:
 python setup.py install
 ```
 
-4. Download *this* directory from Github
+4. Download **this** directory from Github
 
 5. Edit the MySQL database configuration in the `query.py`
 
