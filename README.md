@@ -9,9 +9,14 @@ https://github.com/giffordlabcvr/DIGS-for-EVEs/wiki/NCBI-taxonomy-database
 ```
 pip install Flask
 ```
-3. Download this directory and enter it using Terminal
-4. Run the app using:
+3. Download this directory
+
+4. Edit the MySQL database configuration in the `query.py`
+
+5. Enter the root of this directory using Terminal
+
+6. Run the app using:
 ```
 FLASK_APP=query.py flask run
 ```
-5. NCBI Taxonomy Search is available at `http://localhost:5000`
+7. NCBI Taxonomy Search is available at `http://localhost:5000`
