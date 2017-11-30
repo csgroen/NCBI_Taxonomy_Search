@@ -10,17 +10,21 @@ https://github.com/giffordlabcvr/DIGS-for-EVEs/wiki/NCBI-taxonomy-database
 pip install Flask
 ```
 
-3. Download and install this Python module:
+3. Download this Python module:
 https://pypi.python.org/pypi/mysql-connector-python/2.0.4
+Enter the directory in Terminal, then run:
+```
+python setup.py install
+```
 
-3. Download this directory
+4. Download *this* directory from Github
 
-4. Edit the MySQL database configuration in the `query.py`
+5. Edit the MySQL database configuration in the `query.py`
 
-5. Enter the root of this directory using Terminal
+6. Enter the root of this directory using Terminal
 
-6. Run the app using:
+7. Run the app using:
 ```
 FLASK_APP=query.py flask run
 ```
-7. NCBI Taxonomy Search is available at `http://localhost:5000`
+8. NCBI Taxonomy Search is available at `http://localhost:5000`
